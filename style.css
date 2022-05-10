@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    background: url("world.png") no-repeat;
+    background-size: cover;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.quiz_area {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+.quiz_title {
+    margin: 20px auto 10px;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    width: 400px;
+}
+
+.quiz_playground {
+    margin: 0 auto 100px;
+    display: flex;
+    justify-content: center;
+    width: 450px;
+    flex-wrap: wrap;
+    perspective: 1000px;
+}
+
+.quiz_card {
+    margin: 10px 10px;
+    width: 120px;
+    height: 120px;
+    position: relative;
+    transition: transform .8s linear;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.card_border {
+    background: linear-gradient(-45deg, black, white);
+    padding: 4px;
+    border-radius: 15px;
+    width: 112px;
+    height: 112px;
+    z-index: 3;
+    transform-style: preserve-3d;
+}
+
+.front_card, .back_card {
+    width: 112px;
+    height: 112px;
+    position: absolute;
+    font-weight: bolder;
+    font-size: 15px;
+    border-radius: 15px;
+}
+
+.front_card {
+    background-color: #f1d7b6;
+    color: rgb(255, 165, 0);
+    z-index: 2;
+    backface-visibility: hidden;
+}
+
+.back_card {
+    background-color: rgb(255, 165, 0);
+    color: #f1d7b6;
+    z-index: 1;
+    transform: rotateY(180deg);
+}
+
+.card_text {
+    padding: 0 10px;
+    text-align: center;
+}
+.quiz_card:hover {
+    transform: rotateY(180deg);
+}
